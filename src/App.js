@@ -57,7 +57,7 @@ function App() {
   poses.forEach(({ keypoints }) => {
     keypoints.forEach((kp) => {
       // Lower this to 0.2 temporarily to see if dots appear
-      if (kp.score > 0.5) { 
+      if (kp.score > 0.2) { 
         ctx.beginPath();
         ctx.arc(kp.x, kp.y, 8, 0, 2 * Math.PI);
         ctx.fillStyle = "aqua";
