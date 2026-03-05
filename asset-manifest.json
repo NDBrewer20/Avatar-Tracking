@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "//ndbrewer20.github.io/Avatar-Tracking/static/css/main.c8087a9d.css",
-    "main.js": "//ndbrewer20.github.io/Avatar-Tracking/static/js/main.3c292452.js",
+    "main.js": "//ndbrewer20.github.io/Avatar-Tracking/static/js/main.654477a8.js",
     "static/js/453.68add4cf.chunk.js": "//ndbrewer20.github.io/Avatar-Tracking/static/js/453.68add4cf.chunk.js",
     "index.html": "//ndbrewer20.github.io/Avatar-Tracking/index.html",
     "main.c8087a9d.css.map": "//ndbrewer20.github.io/Avatar-Tracking/static/css/main.c8087a9d.css.map",
-    "main.3c292452.js.map": "//ndbrewer20.github.io/Avatar-Tracking/static/js/main.3c292452.js.map",
+    "main.654477a8.js.map": "//ndbrewer20.github.io/Avatar-Tracking/static/js/main.654477a8.js.map",
     "453.68add4cf.chunk.js.map": "//ndbrewer20.github.io/Avatar-Tracking/static/js/453.68add4cf.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.c8087a9d.css",
-    "static/js/main.3c292452.js"
+    "static/js/main.654477a8.js"
   ]
 }
