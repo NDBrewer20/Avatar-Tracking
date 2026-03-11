@@ -1,65 +1,44 @@
+/* Centering the entire app background */
 .App {
-  text-align: center;
+	background-color: #1a1a1a;
+	width: 100vw;
+	height: 100vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin: 0;
+	overflow: hidden;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 10s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-/* Container must be relative so 'absolute' children stay inside it */
+/* The 90% container */
 .detection-container {
-  position: relative;
-  width: 640px;
-  height: 480px;
+	position: relative;
+	width: 90vw;
+	height: 90vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+/* Common styles for both video and canvas */
+.webcam-style,
+.canvas-style {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	/* This ensures the video and skeleton scale together without drifting */
+	object-fit: contain;
 }
 
 .webcam-style {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 640px;
-  height: 480px;
-  z-index: 1; /* Video in back */
+	z-index: 1;
+	/* Optional: Mirror the video if it feels more natural */
+	/* transform: scaleX(-1); */
 }
 
 .canvas-style {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 640px;
-  height: 480px;
-  z-index: 10; /* Canvas in front */
-  pointer-events: none; /* Let clicks pass through to video if needed */
-}
-
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+	z-index: 10;
+	pointer-events: none;
+	/* If you mirror the video, you MUST mirror the canvas too */
+	/* transform: scaleX(-1); */
 }

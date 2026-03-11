@@ -32,14 +32,12 @@ function App() {
 
 
     const runPoseDetection = async () => {
-    // 1. ADD THIS LINE: Wait for TFJS to be ready
     await tf.ready();
-
-    // Optional: Explicitly set the backend to WebGL if WebGPU is acting up
     //await tf.setBackend('webgl');
 
       const detectorConfig = {
-    // Switch from LIGHTNING to THUNDER for high accuracy
+    // can switch between LIGHTNING and THUNDER for different speed/accuracy tradeoffs 
+	// (lightning is faster but less accurate, thunder is slower but more accurate)
     modelType: poseDetection.movenet.modelType.SINGLEPOSE_THUNDER,
     enableSmoothing: true // Enables built-in jitter reduction
   };
@@ -131,34 +129,22 @@ const detect = async (detector) => {
 
   useEffect(() => { runPoseDetection(); }, []);
 
-  return (
-  <div style={{ 
-    position: "relative", 
-    width: "640px", 
-    height: "480px", 
-    margin: "auto",
-    border: "2px solid red" // This helps you see the outer container
-  }}>
-    <Webcam
-  ref={webcamRef}
-  videoConstraints={videoConstraints}
-  onUserMediaError={(err) => console.error("Webcam Error: ", err)}
-  style={{ position: "absolute", zIndex: 1 }}
-/>
-    <canvas
-      ref={canvasRef}
-      style={{
-        position: "absolute",
-        left: 0,
-        top: 0,
-        width: 640,
-        height: 480,
-        zIndex: 10,
-        pointerEvents: "none"
-      }}
-    />
-  </div>
-);
+	return (
+		<div className="App">
+			<div className="detection-container">
+				<Webcam
+					ref={webcamRef}
+					videoConstraints={videoConstraints}
+					className="webcam-style"
+					onUserMediaError={(err) => console.error("Webcam Error: ", err)}
+				/>
+				<canvas
+					ref={canvasRef}
+					className="canvas-style"
+				/>
+			</div>
+		</div>
+  );
 }
 
 export default App;
