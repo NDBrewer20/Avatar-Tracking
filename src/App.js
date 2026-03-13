@@ -95,7 +95,7 @@ function App() {
 		ctx.clearRect(0, 0, canvasRef.current.width, canvasRef.current.height);
 
 		poses.forEach(({ keypoints }) => {
-			// 1. Draw the Colored Lines (Bones)
+			// Draw the Colored Lines (Bones)
 			SKELETON_CONNECTIONS.forEach((conn) => {
 				const kp1 = keypoints[conn.pairs[0]];
 				const kp2 = keypoints[conn.pairs[1]];
@@ -111,14 +111,13 @@ function App() {
 				}
 			});
 
-			// 2. Draw the Dots (Joints)
+			// Draw the Dots (Joints)
 			keypoints.forEach((kp) => {
 				if (kp.score > 0.3) {
 					ctx.beginPath();
 					ctx.arc(kp.x, kp.y, 4, 0, 2 * Math.PI);
 					ctx.fillStyle = "white";
 					ctx.fill();
-					// Optional: add a small border to dots for visibility
 					ctx.strokeStyle = "black";
 					ctx.lineWidth = 1;
 					ctx.stroke();
