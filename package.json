@@ -1,7 +1,7 @@
 {
   "name": "avatar-tracker",
   "version": "0.1.0",
-  "homepage": "https://https://ndbrewer20.github.io/Avatar-Tracking/",
+  "homepage": "https://ndbrewer20.github.io/Avatar-Tracking",
   "private": true,
   "dependencies": {
     "@tensorflow-models/pose-detection": "^2.1.3",
