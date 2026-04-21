@@ -10,6 +10,22 @@
 	overflow: hidden;
 }
 
+.ui-overlay {
+	position: absolute;
+	top: 20px;
+	width: 100%;
+	text-align: center;
+	z-index: 10;
+	color: white;
+	text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+	pointer-events: none;
+}
+
+.countdown-text {
+	font-size: 80px;
+	color: #ffcc00;
+}
+
 /* The 90% container */
 .detection-container {
 	position: relative;
@@ -18,6 +34,58 @@
 	display: flex;
 	justify-content: center;
 	align-items: center;
+}
+
+.timer-wrapper {
+	position: absolute;
+	top: 20px;
+	right: 20px;
+	background: rgba(0, 0, 0, 0.6);
+	color: white;
+	padding: 10px 20px;
+	border-radius: 12px;
+	border: 2px solid rgba(255, 255, 255, 0.2);
+	text-align: center;
+	min-width: 80px;
+	font-family: 'Arial', sans-serif;
+	z-index: 10;
+	/* Ensures it stays above the canvas */
+}
+
+.timer-label {
+	font-size: 10px;
+	letter-spacing: 1px;
+	font-weight: bold;
+	opacity: 0.8;
+	margin-bottom: 2px;
+}
+
+.timer-number {
+	font-size: 32px;
+	font-weight: 800;
+}
+
+.streak-wrapper {
+	position: absolute;
+	top: 20px;
+	left: 20px;
+	/* Anchored to the left */
+	background: rgba(0, 0, 0, 0.6);
+	color: #00FF00;
+	/* Green color to represent "Correct/Score" */
+	padding: 10px 20px;
+	border-radius: 12px;
+	border: 2px solid rgba(0, 255, 0, 0.3);
+	/* Greenish border */
+	text-align: center;
+	min-width: 80px;
+	font-family: 'Arial', sans-serif;
+	z-index: 10;
+}
+
+/* Optional: Add a little animation when the streak increases */
+.streak-wrapper .timer-number {
+	transition: transform 0.2s ease;
 }
 
 /* Common styles for both video and canvas */
