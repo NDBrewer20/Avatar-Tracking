@@ -1,70 +1,54 @@
-# Getting Started with Create React App
+# Avatar Twister
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+**Avatar Twister** is a real-time, motion controlled web experience that merges physical movement with a virtual environment. By leveraging computer vision, the application mirrors a user's full body pose onto a digital avatar, challenging them to match specific poses under a ticking clock.
 
-## Available Scripts
+---
 
-In the project directory, you can run:
+## Features
 
-### `npm start`
+* **Full Body Motion Mirroring**: Real-time tracking that maps your physical movements directly onto a virtual avatar.
+* **Pose Matching Engine**: An overlay system that displays target poses for the player to replicate.
+* **Dynamic Scoring System**: Earn points by successfully holding poses before the timer expires.
+* **Intuitive Calibration**: Start the game seamlessly by matching a standard **T-Pose** to calibrate the sensors.
+* **Incremental Difficulty**: The game continues with new poses until the player fails to match one in time.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+**Check out the Demo:** [https://ndbrewer20.github.io/Avatar-Tracking/](https://ndbrewer20.github.io/Avatar-Tracking/)
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Tech Stack
 
-### `npm test`
+* **Frontend**: React.js
+* **Motion Tracking**: TensorFlow.js
+* **Rendering**: HTML5 Canvas / WebGL
+* **Styling**: CSS
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## How to Play
 
-### `npm run build`
+1. **Grant Camera Access**: Allow the browser to use your webcam for body tracking.
+2. **Calibrate**: Stand back until your full body is visible. Match the **T-Pose** shown on screen to begin.
+3. **Match the Overlay**: A target pose will appear. Move your body to align your avatar with the ghosted image.
+4. **Beat the Clock**: Hold the pose until the timer hits zero to score points and move to the next round.
+5. **Keep it Up**: The game ends when a pose is missed. Aim for a new high score!
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Installation & Setup
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+1. **Clone the repository**:
+     ```bash
+     git clone https://github.com/your-username/avatar-twister.git
+     ```
+2. **Install Dependencies**
+    ```bash
+    cd avatar-twister
+    npm install
+    ```
+3. Run the Application
+    ```bash
+    npm start
+    ```
+4. Open ```http://localhost:3000``` in your browser
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Project Logic
 
-### `npm run eject`
+The core of the project relies on calculating geometric joint angles and coordinate offsets. The scoring mechanism is gated by a visibility check ensuring that the camera has a clear view of the user's limbs before the challenge begins.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+---
+*Developed as an exploration of Pose Detection and Real-Time Web Interaction.*
